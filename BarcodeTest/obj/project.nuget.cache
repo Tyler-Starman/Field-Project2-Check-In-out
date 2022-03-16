@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "E+qFwQ6oldOFiANGVgZwomtmeUVyqqmXIHAB40eqByou/cXgNeWwJC1b3NCBNajZBiRdAwdivpVEA3JlWxcrYQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tyler\\source\\repos\\BarcodeTest\\BarcodeTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tyler\\.nuget\\packages\\barcode\\2022.3.0\\barcode.2022.3.0.nupkg.sha512",
+    "C:\\Users\\tyler\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\tyler\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\tyler\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512",
+    "C:\\Users\\tyler\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
