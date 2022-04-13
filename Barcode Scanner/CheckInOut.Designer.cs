@@ -78,7 +78,6 @@ namespace Barcode_Scanner
             this.label1.Size = new System.Drawing.Size(159, 33);
             this.label1.TabIndex = 12;
             this.label1.Text = "Student ID:";
-            
             // 
             // btnNext
             // 
@@ -122,7 +121,7 @@ namespace Barcode_Scanner
             this.Controls.Add(this.btnBack);
             this.Name = "CheckInOut";
             this.Text = "Check In and Out";
-            
+            this.Load += new System.EventHandler(this.CheckInOut_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

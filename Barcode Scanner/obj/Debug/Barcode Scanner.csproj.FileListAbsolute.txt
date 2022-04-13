@@ -15,3 +15,19 @@ C:\IHCC\Spring 2022\Field Project\Barcode Scanner\obj\Debug\Barcode_Scanner.Chec
 C:\IHCC\Spring 2022\Field Project\Barcode Scanner\obj\Debug\Barcode_Scanner.Print.resources
 C:\IHCC\Spring 2022\Field Project\Barcode Scanner\obj\Debug\Barcode_Scanner.Update.resources
 C:\IHCC\Spring 2022\Field Project\Barcode Scanner\obj\Debug\Barcode_Scanner.Tool_Check_IN_OUT.resources
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\bin\Debug\Barcode Scanner.exe.config
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\bin\Debug\Barcode Scanner.exe
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\bin\Debug\Barcode Scanner.pdb
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode Scanner.csproj.AssemblyReference.cache
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode_Scanner.AddTools.resources
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode_Scanner.CheckInOut.resources
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode_Scanner.MainMenu.resources
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode_Scanner.Print.resources
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode_Scanner.Properties.Resources.resources
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode_Scanner.Tool_Check_IN_OUT.resources
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode_Scanner.Update.resources
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode Scanner.csproj.GenerateResource.cache
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode Scanner.csproj.CoreCompileInputs.cache
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode Scanner.csproj.CopyComplete
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode Scanner.exe
+C:\Users\Lj\Documents\GitHub\Field-Project2-Check-In-out\Barcode Scanner\obj\Debug\Barcode Scanner.pdb

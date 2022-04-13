@@ -70,5 +70,10 @@ namespace Barcode_Scanner
         {
 
         }
+
+        private void txtBarcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -88,6 +88,7 @@ namespace Barcode_Scanner
             this.btnOut.TabIndex = 19;
             this.btnOut.Text = "Check Out";
             this.btnOut.UseVisualStyleBackColor = true;
+            this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
             // 
             // lblQty
             // 

@@ -14,6 +14,7 @@ namespace Barcode_Scanner
 {
     public partial class CheckInOut : Form
     {
+        public static string studentName, studentId;
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=ScannerDB;Integrated Security=True");
         public CheckInOut()
         {
@@ -44,8 +45,15 @@ namespace Barcode_Scanner
 
             else
             {
+                studentName = txtStudentName.Text;
+                studentId = txtStudentID.Text;
                 new Tool_Check_IN_OUT().ShowDialog();
             }
+        }
+
+        private void CheckInOut_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,11 +30,13 @@ namespace Barcode_Scanner
         private void InitializeComponent()
         {
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(504, 248);
+            this.btnBack.Location = new System.Drawing.Point(816, 536);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(88, 56);
             this.btnBack.TabIndex = 0;
@@ -42,20 +44,44 @@ namespace Barcode_Scanner
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(696, 536);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(88, 56);
+            this.btnPrint.TabIndex = 1;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(336, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(247, 55);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Print Data";
+            // 
             // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(959, 640);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnBack);
             this.Name = "Print";
             this.Text = "Print";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Label label2;
     }
 }

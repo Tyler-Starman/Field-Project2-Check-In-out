@@ -42,9 +42,14 @@ namespace Barcode_Scanner
                 try
                 {
                     conn.Open();
+                    string studentInName, studentInId;
 
-                    //SqlCommand cmd = new SqlCommand("Insert into tools values ('" + txtToolBarcode.Text + "','" + txtQty.Text + "' ,'" + txtLocation.Text + "')", conn);
-                    //cmd.ExecuteNonQuery();
+                    studentInName = CheckInOut.studentName;
+                    studentInId = CheckInOut.studentId;
+
+                    SqlCommand cmd = new SqlCommand("Insert into InOut (StudentId, TimeIn, Amount, ToolID, StudentName) values " +
+                                     "('" + studentInId + "','" + DateTime.Now + "' ,'" + txtQty.Text + "' ,'" + txtToolBarcode.Text + "' ,'" + studentInName + "')", conn);
+                    cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Data Submited");
                    
@@ -54,6 +59,37 @@ namespace Barcode_Scanner
                 {
                     MessageBox.Show(ex.Message);
                     
+                }
+            }
+        }
+
+        private void btnOut_Click(object sender, EventArgs e)
+        {
+            if (txtToolBarcode.Text == "" || txtQty.Text == "")
+            {
+                MessageBox.Show("Please fill all fields");
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+                    string studentInName, studentInId;
+
+                    studentInName = CheckInOut.studentName;
+                    studentInId = CheckInOut.studentId;
+
+                    SqlCommand cmd = new SqlCommand("Update InOut Set TimeOut = '"+DateTime.Now +"' where StudentId = '"+studentInId+"' and ToolId = '"+txtToolBarcode.Text+"' and TimeOut is null  ", conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Data Submited");
+
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
                 }
             }
         }

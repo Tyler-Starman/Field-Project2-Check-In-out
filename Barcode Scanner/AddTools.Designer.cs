@@ -60,6 +60,7 @@ namespace Barcode_Scanner
             this.txtBarcode.ReadOnly = true;
             this.txtBarcode.Size = new System.Drawing.Size(866, 40);
             this.txtBarcode.TabIndex = 2;
+            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             // 
             // btnBack
             // 
