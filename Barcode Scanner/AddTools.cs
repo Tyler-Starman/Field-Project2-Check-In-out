@@ -20,6 +20,8 @@ namespace Barcode_Scanner
         public AddTools()
         {
             InitializeComponent();
+            txtQty.Visible = false;
+            lblQty.Visible = false;
             BarcodeScanner barcodeScanner = new BarcodeScanner(txtBarcode);
             barcodeScanner.BarcodeScanned += BarcodeScanner_BarcodeScanned;
         }
@@ -37,10 +39,36 @@ namespace Barcode_Scanner
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "" || txtLocation.Text == "" || txtBarcode.Text == "") {
-                MessageBox.Show("Please fill all fields");
-            }
-            else {
+            if (rbtnTool.Checked) 
+            {
+                if (txtName.Text == "" || txtLocation.Text == "" || txtBarcode.Text == "") {
+                    MessageBox.Show("Please fill all fields");
+                }
+                else {
+                    try
+                    {
+                        conn.Open();
+
+                        SqlCommand cmd = new SqlCommand("Insert into tools values ('" + txtBarcode.Text + "','" + txtName.Text + "' ,'" + txtLocation.Text + "')", conn);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Data Submited");
+                        txtBarcode.Clear();
+                        txtLocation.Clear();
+                        txtName.Clear();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        txtBarcode.Clear();
+                        txtLocation.Clear();
+                        txtName.Clear();
+                    }
+                }
+            } 
+            else
+            {
                 try
                 {
                     conn.Open();
@@ -50,7 +78,7 @@ namespace Barcode_Scanner
                     conn.Close();
                     MessageBox.Show("Data Submited");
                     txtBarcode.Clear();
-                    txtLocation.Clear();
+                    txtQty.Clear();
                     txtName.Clear();
                 }
 
@@ -58,7 +86,7 @@ namespace Barcode_Scanner
                 {
                     MessageBox.Show(ex.Message);
                     txtBarcode.Clear();
-                    txtLocation.Clear();
+                    txtQty.Clear();
                     txtName.Clear();
                 }
             }
@@ -75,5 +103,35 @@ namespace Barcode_Scanner
         {
 
         }
+
+        private void rbtnTool_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnTool.Checked)
+            {
+                txtQty.Visible = false;
+                lblQty.Visible = false;
+                txtLocation.Visible = true;
+                lblLocation.Visible = true;
+
+                lblName.Text = "Tool Name: ";
+                txtQty.Clear();
+                txtLocation.Clear();
+            }
+            else
+            {
+                txtQty.Visible = true;
+                lblQty.Visible = true;
+
+                txtLocation.Visible = false;
+                lblLocation.Visible = false;
+
+                lblName.Text = "Consumable Name: ";
+
+                txtQty.Clear();
+                txtLocation.Clear();
+            }
+        }
+
+       
     }
 }

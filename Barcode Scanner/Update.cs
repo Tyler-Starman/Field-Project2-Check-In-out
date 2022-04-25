@@ -53,16 +53,25 @@ namespace Barcode_Scanner
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            conn.Open();
 
+            try
+            {
+                conn.Open();
 
-            SqlCommand updateTool = new SqlCommand("update Tools set name = '"+txtName.Text+ "', location = '"+txtLocation.Text+ "' where [Tool ID] = '"+txtToolBarcode.Text+ "' ", conn);
-            updateTool.ExecuteNonQuery();
-            conn.Close();
-            MessageBox.Show("Tool Updated");
-            txtToolBarcode.Clear();
-            txtName.Clear();
-            txtLocation.Clear();
+                SqlCommand updateTool = new SqlCommand("update Tools set name = '" + txtName.Text + "', location = '" + txtLocation.Text + "' where [Tool ID] = '" + txtToolBarcode.Text + "' ", conn);
+                updateTool.ExecuteNonQuery();
+
+                conn.Close();
+                MessageBox.Show("Tool infromations has been updated");
+                txtToolBarcode.Clear();
+                txtName.Clear();
+                txtLocation.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
         }
 
         private void txtLocation_TextChanged(object sender, EventArgs e)

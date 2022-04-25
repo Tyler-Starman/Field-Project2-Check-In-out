@@ -38,13 +38,19 @@ namespace Barcode_Scanner
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtnTool = new System.Windows.Forms.RadioButton();
+            this.rbtnConsume = new System.Windows.Forms.RadioButton();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.lblQty = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 248);
+            this.label1.Location = new System.Drawing.Point(40, 296);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 33);
@@ -54,7 +60,7 @@ namespace Barcode_Scanner
             // txtBarcode
             // 
             this.txtBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarcode.Location = new System.Drawing.Point(304, 248);
+            this.txtBarcode.Location = new System.Drawing.Point(408, 296);
             this.txtBarcode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.ReadOnly = true;
@@ -64,7 +70,7 @@ namespace Barcode_Scanner
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(1088, 432);
+            this.btnBack.Location = new System.Drawing.Point(1192, 520);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(80, 56);
             this.btnBack.TabIndex = 3;
@@ -75,16 +81,16 @@ namespace Barcode_Scanner
             // lblName
             // 
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblName.Location = new System.Drawing.Point(32, 304);
+            this.lblName.Location = new System.Drawing.Point(40, 352);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(253, 33);
+            this.lblName.Size = new System.Drawing.Size(312, 33);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Tool Name:";
             // 
             // lblLocation
             // 
             this.lblLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblLocation.Location = new System.Drawing.Point(32, 360);
+            this.lblLocation.Location = new System.Drawing.Point(40, 408);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(253, 33);
             this.lblLocation.TabIndex = 5;
@@ -92,7 +98,7 @@ namespace Barcode_Scanner
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(992, 432);
+            this.btnSubmit.Location = new System.Drawing.Point(1096, 520);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(80, 56);
             this.btnSubmit.TabIndex = 8;
@@ -103,7 +109,7 @@ namespace Barcode_Scanner
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(304, 304);
+            this.txtName.Location = new System.Drawing.Point(408, 352);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(866, 40);
@@ -112,7 +118,7 @@ namespace Barcode_Scanner
             // txtLocation
             // 
             this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.Location = new System.Drawing.Point(304, 360);
+            this.txtLocation.Location = new System.Drawing.Point(408, 408);
             this.txtLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(866, 40);
@@ -122,17 +128,73 @@ namespace Barcode_Scanner
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(416, 56);
+            this.label2.Location = new System.Drawing.Point(512, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(338, 55);
             this.label2.TabIndex = 11;
             this.label2.Text = "Add New Tool";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbtnTool);
+            this.groupBox1.Controls.Add(this.rbtnConsume);
+            this.groupBox1.Location = new System.Drawing.Point(48, 160);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(208, 120);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Check out";
+            // 
+            // rbtnTool
+            // 
+            this.rbtnTool.AutoSize = true;
+            this.rbtnTool.Checked = true;
+            this.rbtnTool.Location = new System.Drawing.Point(16, 32);
+            this.rbtnTool.Name = "rbtnTool";
+            this.rbtnTool.Size = new System.Drawing.Size(64, 24);
+            this.rbtnTool.TabIndex = 24;
+            this.rbtnTool.TabStop = true;
+            this.rbtnTool.Text = "Tool";
+            this.rbtnTool.UseVisualStyleBackColor = true;
+            this.rbtnTool.CheckedChanged += new System.EventHandler(this.rbtnTool_CheckedChanged);
+            // 
+            // rbtnConsume
+            // 
+            this.rbtnConsume.AutoSize = true;
+            this.rbtnConsume.Location = new System.Drawing.Point(16, 72);
+            this.rbtnConsume.Name = "rbtnConsume";
+            this.rbtnConsume.Size = new System.Drawing.Size(123, 24);
+            this.rbtnConsume.TabIndex = 23;
+            this.rbtnConsume.Text = "Consumable";
+            this.rbtnConsume.UseVisualStyleBackColor = true;
+            // 
+            // txtQty
+            // 
+            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty.Location = new System.Drawing.Point(408, 464);
+            this.txtQty.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(866, 40);
+            this.txtQty.TabIndex = 25;
+            // 
+            // lblQty
+            // 
+            this.lblQty.AutoSize = true;
+            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.lblQty.Location = new System.Drawing.Point(40, 464);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(140, 33);
+            this.lblQty.TabIndex = 24;
+            this.lblQty.Text = "Quantity: ";
+            // 
             // AddTools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 606);
+            this.ClientSize = new System.Drawing.Size(1323, 667);
+            this.Controls.Add(this.txtQty);
+            this.Controls.Add(this.lblQty);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLocation);
             this.Controls.Add(this.txtName);
@@ -146,6 +208,8 @@ namespace Barcode_Scanner
             this.Name = "AddTools";
             this.Text = "Add Tools";
             this.Load += new System.EventHandler(this.AddTools_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,6 +225,11 @@ namespace Barcode_Scanner
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbtnTool;
+        private System.Windows.Forms.RadioButton rbtnConsume;
+        private System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.Label lblQty;
     }
 }
 

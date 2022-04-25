@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,8 @@ namespace Barcode_Scanner
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            // TODO: This line of code loads data into the 'scannerDBDataSet2.ProcLiveData' table. You can move, or remove it, as needed.
+            this.procLiveDataTableAdapter.Fill(this.scannerDBDataSet2.ProcLiveData);
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)
@@ -39,7 +41,15 @@ namespace Barcode_Scanner
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+
+          
             new Print().ShowDialog();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            this.procLiveDataTableAdapter.Fill(this.scannerDBDataSet2.ProcLiveData);
+
         }
     }
 }

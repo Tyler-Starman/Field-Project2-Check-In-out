@@ -51,6 +51,11 @@ namespace Barcode_Scanner
             }
         }
 
+        private void txtStudentID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void CheckInOut_Load(object sender, EventArgs e)
         {
 

@@ -18,6 +18,8 @@ namespace Barcode_Scanner
         public Tool_Check_IN_OUT()
         {
             InitializeComponent();
+            txtQty.Visible = false;
+            lblQty.Visible = false;
             BarcodeScanner barcodeScanner = new BarcodeScanner(txtToolBarcode);
             barcodeScanner.BarcodeScanned += BarcodeScanner_BarcodeScanned;
         }
@@ -51,13 +53,14 @@ namespace Barcode_Scanner
                                      "('" + studentInId + "','" + DateTime.Now + "' ,'" + txtQty.Text + "' ,'" + txtToolBarcode.Text + "' ,'" + studentInName + "')", conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    MessageBox.Show("Data Submited");
+                    MessageBox.Show("Tool has been clocked in");
                    
                 }
 
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    conn.Close();
                     
                 }
             }
@@ -82,15 +85,31 @@ namespace Barcode_Scanner
                     SqlCommand cmd = new SqlCommand("Update InOut Set TimeOut = '"+DateTime.Now +"' where StudentId = '"+studentInId+"' and ToolId = '"+txtToolBarcode.Text+"' and TimeOut is null  ", conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    MessageBox.Show("Data Submited");
+                    MessageBox.Show("Tool has been clocked out");
 
                 }
 
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    conn.Close();
 
                 }
+            }
+        }
+
+        private void rbtnTool_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnTool.Checked)
+            {
+                txtQty.Visible = false;
+                lblQty.Visible = false;
+                txtQty.Clear();
+            }
+            else
+            {
+                txtQty.Visible = true;
+                lblQty.Visible = true;
             }
         }
     }

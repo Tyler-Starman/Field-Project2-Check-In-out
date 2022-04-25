@@ -67,6 +67,7 @@ namespace Barcode_Scanner
             this.txtStudentID.ReadOnly = true;
             this.txtStudentID.Size = new System.Drawing.Size(866, 40);
             this.txtStudentID.TabIndex = 13;
+            this.txtStudentID.TextChanged += new System.EventHandler(this.txtStudentID_TextChanged);
             // 
             // label1
             // 
