@@ -37,8 +37,8 @@ namespace Barcode_Scanner
             this.lblQty = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnConsume = new System.Windows.Forms.RadioButton();
             this.rbtnTool = new System.Windows.Forms.RadioButton();
+            this.rbtnConsume = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@ namespace Barcode_Scanner
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(312, 32);
+            this.label2.Location = new System.Drawing.Point(408, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(558, 55);
             this.label2.TabIndex = 17;
@@ -124,16 +124,6 @@ namespace Barcode_Scanner
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Check out";
             // 
-            // rbtnConsume
-            // 
-            this.rbtnConsume.AutoSize = true;
-            this.rbtnConsume.Location = new System.Drawing.Point(16, 72);
-            this.rbtnConsume.Name = "rbtnConsume";
-            this.rbtnConsume.Size = new System.Drawing.Size(123, 24);
-            this.rbtnConsume.TabIndex = 23;
-            this.rbtnConsume.Text = "Consumable";
-            this.rbtnConsume.UseVisualStyleBackColor = true;
-            // 
             // rbtnTool
             // 
             this.rbtnTool.AutoSize = true;
@@ -146,6 +136,16 @@ namespace Barcode_Scanner
             this.rbtnTool.Text = "Tool";
             this.rbtnTool.UseVisualStyleBackColor = true;
             this.rbtnTool.CheckedChanged += new System.EventHandler(this.rbtnTool_CheckedChanged);
+            // 
+            // rbtnConsume
+            // 
+            this.rbtnConsume.AutoSize = true;
+            this.rbtnConsume.Location = new System.Drawing.Point(16, 72);
+            this.rbtnConsume.Name = "rbtnConsume";
+            this.rbtnConsume.Size = new System.Drawing.Size(123, 24);
+            this.rbtnConsume.TabIndex = 23;
+            this.rbtnConsume.Text = "Consumable";
+            this.rbtnConsume.UseVisualStyleBackColor = true;
             // 
             // Tool_Check_IN_OUT
             // 

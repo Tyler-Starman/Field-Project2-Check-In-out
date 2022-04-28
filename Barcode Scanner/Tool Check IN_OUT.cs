@@ -20,6 +20,7 @@ namespace Barcode_Scanner
             InitializeComponent();
             txtQty.Visible = false;
             lblQty.Visible = false;
+            btnOut.Visible = true;
             BarcodeScanner barcodeScanner = new BarcodeScanner(txtToolBarcode);
             barcodeScanner.BarcodeScanned += BarcodeScanner_BarcodeScanned;
         }
@@ -63,6 +64,31 @@ namespace Barcode_Scanner
                     conn.Close();
                     
                 }
+
+            if (rbtnConsume.Checked) {
+                    try
+                    {
+                        conn.Open();
+                        string studentInName, studentInId;
+
+                        studentInName = CheckInOut.studentName;
+                        studentInId = CheckInOut.studentId;
+
+                        SqlCommand cmd = new SqlCommand("Insert into InOutConsumable (StudentId, Name, ConsumableID, QuantityTaken, TimeTaken) values " +
+                                         "('" + studentInId + "','" + studentInName + "' ,'" + txtToolBarcode.Text + "' ,'" + txtQty + "' ,'" + DateTime.Now + "')", conn);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Consumable has been clocked in");
+
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        conn.Close();
+
+                    }
+                }
             }
         }
 
@@ -105,11 +131,13 @@ namespace Barcode_Scanner
                 txtQty.Visible = false;
                 lblQty.Visible = false;
                 txtQty.Clear();
+                btnOut.Visible = true;
             }
             else
             {
                 txtQty.Visible = true;
                 lblQty.Visible = true;
+                btnOut.Visible = false;
             }
         }
     }

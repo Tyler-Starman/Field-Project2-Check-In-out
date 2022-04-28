@@ -143,7 +143,7 @@ namespace Barcode_Scanner
             this.groupBox1.Size = new System.Drawing.Size(208, 120);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Check out";
+            this.groupBox1.Text = "Add new items";
             // 
             // rbtnTool
             // 

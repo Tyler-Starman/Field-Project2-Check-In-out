@@ -32,6 +32,7 @@ namespace Barcode_Scanner
             this.btnBack = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnPrintConsumable = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBack
@@ -64,11 +65,22 @@ namespace Barcode_Scanner
             this.label2.TabIndex = 12;
             this.label2.Text = "Print Data";
             // 
+            // btnPrintConsumable
+            // 
+            this.btnPrintConsumable.Location = new System.Drawing.Point(560, 536);
+            this.btnPrintConsumable.Name = "btnPrintConsumable";
+            this.btnPrintConsumable.Size = new System.Drawing.Size(112, 56);
+            this.btnPrintConsumable.TabIndex = 13;
+            this.btnPrintConsumable.Text = "Print Consumable";
+            this.btnPrintConsumable.UseVisualStyleBackColor = true;
+            this.btnPrintConsumable.Click += new System.EventHandler(this.btnPrintConsumable_Click);
+            // 
             // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 640);
+            this.Controls.Add(this.btnPrintConsumable);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnBack);
@@ -84,5 +96,6 @@ namespace Barcode_Scanner
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPrintConsumable;
     }
 }
