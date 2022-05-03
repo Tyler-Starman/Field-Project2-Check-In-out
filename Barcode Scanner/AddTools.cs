@@ -73,7 +73,7 @@ namespace Barcode_Scanner
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("Insert into tools values ('" + txtBarcode.Text + "','" + txtName.Text + "' ,'" + txtLocation.Text + "')", conn);
+                    SqlCommand cmd = new SqlCommand("Insert into consumable values ('" + txtBarcode.Text + "','" + txtName.Text + "' ,'" + txtQty.Text + "')", conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Data Submited");

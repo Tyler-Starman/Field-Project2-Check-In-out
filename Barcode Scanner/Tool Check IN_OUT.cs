@@ -36,9 +36,36 @@ namespace Barcode_Scanner
 
         private void btnIN_Click(object sender, EventArgs e)
         {
-            if (txtToolBarcode.Text == "" || txtQty.Text == "")
+            if (rbtnTool.Checked)
             {
-                MessageBox.Show("Please fill all fields");
+                if (txtToolBarcode.Text == "" || txtQty.Text == "")
+                {
+                    MessageBox.Show("Please fill all fields");
+                }
+                else
+                {
+                    try
+                    {
+                        conn.Open();
+                        string studentInName, studentInId;
+
+                        studentInName = CheckInOut.studentName;
+                        studentInId = CheckInOut.studentId;
+
+                        SqlCommand cmd = new SqlCommand("Insert into InOut (StudentId, TimeIn, Amount, ToolID, StudentName) values " +
+                                         "('" + studentInId + "','" + DateTime.Now + "' ,'" + txtQty.Text + "' ,'" + txtToolBarcode.Text + "' ,'" + studentInName + "')", conn);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Tool has been clocked in");
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        conn.Close();
+
+                    }
+                }
             }
             else
             {
@@ -50,45 +77,25 @@ namespace Barcode_Scanner
                     studentInName = CheckInOut.studentName;
                     studentInId = CheckInOut.studentId;
 
-                    SqlCommand cmd = new SqlCommand("Insert into InOut (StudentId, TimeIn, Amount, ToolID, StudentName) values " +
-                                     "('" + studentInId + "','" + DateTime.Now + "' ,'" + txtQty.Text + "' ,'" + txtToolBarcode.Text + "' ,'" + studentInName + "')", conn);
+                    SqlCommand cmd = new SqlCommand("Insert into InOutConsumable (StudentId, Name, CosumableID, QuantityTaken, TimeTaken) values " +
+                                     "('" + studentInId + "','" + studentInName + "' ,'" + txtToolBarcode.Text + "' ,'" + txtQty.Text + "' ,'" + DateTime.Now + "')", conn);
                     cmd.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Tool has been clocked in");
+
                    
+                    SqlCommand calc = new SqlCommand("Update Consumable set ConsumableQty = ConsumableQty - '" + txtQty.Text + "' where ConsumableID = '" + txtToolBarcode.Text + "' ", conn);
+                    calc.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Consumable has been clocked in");
+
                 }
 
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                     conn.Close();
-                    
+
                 }
-
-            if (rbtnConsume.Checked) {
-                    try
-                    {
-                        conn.Open();
-                        string studentInName, studentInId;
-
-                        studentInName = CheckInOut.studentName;
-                        studentInId = CheckInOut.studentId;
-
-                        SqlCommand cmd = new SqlCommand("Insert into InOutConsumable (StudentId, Name, ConsumableID, QuantityTaken, TimeTaken) values " +
-                                         "('" + studentInId + "','" + studentInName + "' ,'" + txtToolBarcode.Text + "' ,'" + txtQty + "' ,'" + DateTime.Now + "')", conn);
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-                        MessageBox.Show("Consumable has been clocked in");
-
-                    }
-
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        conn.Close();
-
-                    }
-                }
+            
             }
         }
 
